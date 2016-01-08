@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="@dimen/user_details_container_padding"
+    android:background="#60000000">
+    <RelativeLayout
+        android:id="@+id/container"
+        android:orientation="vertical" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dialog_backgound"
+        android:layout_centerInParent="true"
+        android:paddingBottom="@dimen/user_details_inner_container_padding">
+        <com.kpkdev.youlocaltask.ui.ui.views.DialofTopBackgroundImage
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_alignParentTop="true" />
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/user_details_user_avatar_size"
+            android:layout_height="@dimen/user_details_user_avatar_size"
+            android:scaleType="centerCrop"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/user_details_avatar_margin_top"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/user_details_username_text_size"
+            android:layout_marginTop="@dimen/user_details_username_margin_top"
+            android:gravity="center_horizontal"
+            android:text="Username"
+            android:layout_below="@+id/iv_avatar"
+            />
+
+        <TextView
+            android:id="@+id/tv_about"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:textSize="@dimen/user_details_about_text_size"
+            android:layout_marginTop="@dimen/user_details_about_margin_top"
+            android:gravity="center_horizontal"
+            android:text="About me:"
+            android:layout_below="@+id/tv_username"
+            />
+        <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorAccent"
+            android:layout_marginLeft="15dp" android:layout_marginRight="15dp"
+            android:textSize="@dimen/user_details_description_text_size"
+            android:gravity="center_horizontal"
+            android:scrollbars="vertical"
+            android:maxLines="8"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris accumsan turpis ligula, vel iaculis massa auctor sit amet. Nam pharetra eget arcu non ornare. Quisque facilisis porta tellus eu venenatis. Duis eleifend, enim a ornare auctor, nisi arcu viverra tellus, non feugiat sem sem ac est. Quisque cursus dui at fringilla elementum. Quisque lacus tellus, cursus a tincidunt luctus, venenatis sit amet dolor. Ut sed ex tempor, consequat nisi quis, venenatis libero. Fusce placerat nibh quis sapien elementum consequat.\n\nCurabitur pharetra, nunc quis venenatis mattis, eros nisl egestas orci, a posuere quam libero a nisi. Vestibulum eget sem enim. Nullam in quam augue. Phasellus non erat vel nisi venenatis faucibus. Integer eu ligula id est scelerisque faucibus in nec orci. Maecenas posuere urna in hendrerit dapibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas laoreet quis elit at porta."
+            android:layout_below="@+id/tv_about"
+            />
+    </RelativeLayout>
+</RelativeLayout>
