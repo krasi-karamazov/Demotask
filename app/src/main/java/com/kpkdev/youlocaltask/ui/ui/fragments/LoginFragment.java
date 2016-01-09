@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.kpkdev.youlocaltask.R;
 import com.kpkdev.youlocaltask.ui.navigation.NavigationListener;
@@ -127,7 +128,7 @@ public class LoginFragment extends BaseFragment implements Validator.ValidationL
                         if(!mForgottenState) {
                             validator.validate();
                         }else{
-
+                            validator.validate();
                         }
                         break;
                 }
@@ -222,11 +223,15 @@ public class LoginFragment extends BaseFragment implements Validator.ValidationL
 
     @Override
     public void onValidationSucceeded() {
-        if(ConnectivityUtils.isNetworkAvailable(getActivity().getApplicationContext())) {
-            showProgress();
-            APIClient.getInstance().getUserDetails(etUserName.getText().toString(), etPassword.getText().toString());
+        if(!mForgottenState) {
+            if(ConnectivityUtils.isNetworkAvailable(getActivity().getApplicationContext())) {
+                showProgress();
+                APIClient.getInstance().getUserDetails(etUserName.getText().toString(), etPassword.getText().toString());
+            }else{
+                NoConnectionDialog.getInstance(null).show(getActivity().getFragmentManager(), NoConnectionDialog.TAG);
+            }
         }else{
-            NoConnectionDialog.getInstance(null).show(getActivity().getFragmentManager(), NoConnectionDialog.TAG);
+            Toast.makeText(getActivity(), "Sending forgotten pass query", Toast.LENGTH_SHORT).show();
         }
     }
 
